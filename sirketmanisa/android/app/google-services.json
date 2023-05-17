@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "571235122817",
+    "project_id": "sirketmanisa",
+    "storage_bucket": "sirketmanisa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571235122817:android:41d3b058ad9f5825f81780",
+        "android_client_info": {
+          "package_name": "com.example.sirketmanisa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571235122817-due5d0om0fh5ihktn5q0ckfhspvec4tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBczU2y5hlnsRjlIXhvZS9giS6WuA1giwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571235122817-due5d0om0fh5ihktn5q0ckfhspvec4tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571235122817:android:57be37ac94e87513f81780",
+        "android_client_info": {
+          "package_name": "com.manisa.sirket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571235122817-due5d0om0fh5ihktn5q0ckfhspvec4tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBczU2y5hlnsRjlIXhvZS9giS6WuA1giwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571235122817-due5d0om0fh5ihktn5q0ckfhspvec4tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
