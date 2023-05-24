@@ -3,7 +3,7 @@ import 'package:sirketmanisa/screens/page1.dart';
 import 'package:sirketmanisa/screens/page2.dart';
 import 'package:sirketmanisa/screens/page3.dart';
 
-import '../page1/home.dart';
+import '../page3/home.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _pages = [
     Page1(),
     Page2(),
-    Page3(),
+    MyApp(),
   ];
 
   void _onItemTapped(int index) {
