@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../provider/theme_proivder.dart';
+
 class Page1 extends StatelessWidget {
    Page1({super.key});
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
     return ChangeNotifierProvider(
       create: (context) => boxdesign(),
       child: const MaterialApp(
@@ -15,12 +18,20 @@ class Page1 extends StatelessWidget {
     );
   }
 }
-class start extends StatelessWidget {
+class start extends StatefulWidget {
   const start({super.key});
+
+  @override
+  State<start> createState() => _startState();
+}
+
+class _startState extends State<start> {
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
+
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: theme.getTheme().scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -80,16 +91,25 @@ class start extends StatelessWidget {
   }
 }
 class home extends StatefulWidget {
-  const home({super.key});
+  const home({Key? key}) : super(key: key);
+
   @override
   State<home> createState() => _homeState();
 }
+
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
+    final TextStyle titleStylew = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: theme.getTheme().brightness == Brightness.light ? Colors.black : Colors.white,
+    );
     return Scaffold(
+      backgroundColor: theme.getTheme().scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: theme.getTheme().scaffoldBackgroundColor,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 24.0),
@@ -100,18 +120,18 @@ class _homeState extends State<home> {
         ),
         title: Text(
           'USA',
-          style: TextStyle(
-            fontSize: 15,
-            color: Colors.grey[800],
-          ),
-        ), centerTitle: false,
+        style: titleStylew,
+        ),
+        centerTitle: false,
         actions: [
-          Padding(padding: const EdgeInsets.only(right: 24.0),
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
             child: Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(12), ),
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Icon(
                 Icons.person,
                 color: Colors.grey,
@@ -136,25 +156,32 @@ class _homeState extends State<home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 48),
-          const Padding(padding: EdgeInsets.symmetric(horizontal: 24.0),
-            child: Text('Good morning,'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Text(
+              "My box",
+              style: titleStylew,
+            ),
           ),
           const SizedBox(height: 4),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
               "Let's order fresh items for you",
+              style: titleStylew,
             ),
           ),
           const SizedBox(height: 25),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Divider(),
-          ),const SizedBox(height: 25),
+          ),
+          const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               "Fresh Items",
+              style: titleStylew,
             ),
           ),
           Expanded(
@@ -188,6 +215,7 @@ class _homeState extends State<home> {
     );
   }
 }
+
 class boxdesign extends ChangeNotifier {
   final List _shop = const [
     ["Avocado", "3", 'https://st2.myideasoft.com/idea/ha/92/myassets/products/222/avakado.jpg?revision=1603383894', Colors.yellow],
@@ -218,9 +246,16 @@ class Box extends StatelessWidget {
   const Box({super.key});
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
+    final TextStyle titleStyle = TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.bold,
+      color: theme.getTheme().brightness == Brightness.light ? Colors.black : Colors.white,
+    );
     return Scaffold(
+      backgroundColor: theme.getTheme().scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: theme.getTheme().scaffoldBackgroundColor,
         elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.grey[800],
@@ -234,7 +269,7 @@ class Box extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(
-                  "My box",
+                  "My box",style:  titleStyle
                 ),
               ),
               Expanded(
@@ -350,6 +385,7 @@ class shopapp extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(12),
       child: Container(

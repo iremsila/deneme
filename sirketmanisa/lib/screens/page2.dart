@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/theme_proivder.dart';
 
 class Page2 extends StatelessWidget {
   final List<Book> bookList = [
@@ -65,6 +68,9 @@ class Page2 extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -79,6 +85,7 @@ class Page2 extends StatelessWidget {
             return bookList[index];
           },
         ),
+        backgroundColor: theme.getTheme().scaffoldBackgroundColor,
       ),
     );
   }
@@ -99,11 +106,31 @@ class Book extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<themeProvider>(context);
+    final TextStyle titleStyle = TextStyle(
+      fontSize: 19,
+      fontWeight: FontWeight.bold,
+      color: theme.getTheme().brightness == Brightness.light ? Colors.black : Colors.white,
+    );
+    final TextStyle stitleStyle = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: theme.getTheme().brightness == Brightness.light ? Colors.black : Colors.white,
+    );
+    final TextStyle yeartitleStyle = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w700,
+      color: theme.getTheme().brightness == Brightness.light ? Colors.black : Colors.white,
+    );
+
     return ListTile(
-      title: Text(title),
-      subtitle: Text(description),
+      title: Text(title,
+      style:titleStyle, ),
+      subtitle: Text(description,
+        style:stitleStyle,),
       leading: Image.network(imageUrl),
-      trailing: Text(year.toString()),
+      trailing: Text(year.toString(),
+        style:yeartitleStyle,),
     );
   }
 }
