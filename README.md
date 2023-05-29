@@ -1,1 +1,4 @@
-# deneme
+Bu projede GridView, ListView, Firebase Authentication, Provider ve API yapılarını kullanarak Flutter'da önemli kısımları anladığımı göstermeyi amaçladım. Sayfalar arasında bir anlam bütünlüğü bulunmamaktadır. Her sayfa kendine özel. Mesela bir sayfada alışveriş kısmı varken diğer sayfada haberler kısmı var. Projeyi daha iyi anlatabilmek için aşağıdaki düzenlemeleri yapabilirim:
+
+Bu projede, Flutter'daki önemli bileşenleri kullanarak bir uygulama geliştirdim. Projede GridView ve ListView gibi widget'ları kullanarak verileri düzenli bir şekilde göstermeyi hedefledim. Firebase Authentication'i entegre ederek kullanıcı kimlik doğrulama işlemlerini gerçekleştirdim. Ayrıca Provider kütüphanesini kullanarak veri yönetimini kolaylaştırdım ve API entegrasyonu yaparak dış kaynaklardan veri çekmeyi sağladım.
+
